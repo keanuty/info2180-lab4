@@ -63,10 +63,29 @@ $superheroes = [
   ], 
 ];
 
+$heroName = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+if (!empty($heroName))
+{
+    foreach ($superheroes as $hero)
+    {
+        if (strcasecmp($hero['alias'], $heroName) == 0)
+        {
+            echo "<h3>{$hero['alias']}</h3> <h4>A.K.A {$hero['name']}</h4> <p>{$hero['biography']}</p>";
+            exit();
+        }
+    }
+
+    echo "Superhero not found.";
+    exit();
+}
+
 ?>
 
 <ul>
+
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
+
 </ul>

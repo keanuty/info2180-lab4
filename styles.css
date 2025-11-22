@@ -1,0 +1,68 @@
+.container
+{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+html
+{
+    font-family: sans-serif;
+}
+
+header
+{
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #4d8ab5;
+    color: white;
+    padding: 40px 0;
+}
+
+body
+{
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+input
+{
+    background-color: white;
+    color: black;
+    width: 75%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: none;
+}
+
+input, button
+{
+    height: 45px;
+    border-radius: 5px;
+}
+
+button
+{
+    background-color: #c72523;
+    color: white;
+    width: 14%;
+    text-transform: capitalize;
+    border: none;
+
+    margin-bottom: 2em;
+}
+
+#result
+{
+    margin-top: 1.2em;
+}
+
+h3
+{
+    margin-bottom: 0;
+}
+
+h4
+{
+    margin-top: 0.25em;
+}

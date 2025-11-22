@@ -1,17 +1,18 @@
-window.onload = function()
-{
-    document.getElementById("search-button").onclick = function() {
+$(function() {
+    $("#search-button").on("click", function() {
         getSuperheroes();
-    };
-};
+    });
+});
 
 function getSuperheroes()
 {
-    $.ajax("superheroes.php")
+    let heroName = $("#hero-name").val();
+
+    $.ajax("superheroes.php?query=" + heroName)
     .done(function(data) {
-        alert("Data retrieved: " + data);
+        $("#result").html(data);
     })
     .fail(function() {
-        alert("Error retrieving data.");
+        $("#result").html("An error occurred while processing your request.");
     });
 }
